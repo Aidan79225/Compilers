@@ -15,6 +15,12 @@ public class Lexer {
     public Lexer() {
         reserve(new Word(Tag.TRUE, "true"));
         reserve(new Word(Tag.FALSE, "false"));
+        reserve(new Word(Tag.LESS_THEN, "<"));
+        reserve(new Word(Tag.LESS_THEN_OR_EQUAL_TO, "<="));
+        reserve(new Word(Tag.GREATER_THEN, ">"));
+        reserve(new Word(Tag.GREATER_THEN_OR_EQUAL_TO, ">="));
+        reserve(new Word(Tag.EQUAL_TO, "=="));
+        reserve(new Word(Tag.NOT_EQUAL_TO, "!="));
     }
 
     private void readPeek() throws IOException {
@@ -41,6 +47,19 @@ public class Lexer {
                 words.put(s, word);
             }
             return word;
+        }
+
+        if (peek == '>' || peek == '=' || peek == '!' || peek == '<') {
+            String s = "" + peek;
+            readPeek();
+            if (peek == '=') {
+                s = s + peek;
+            }
+            Word word = words.get(s);
+            if (word == null) {
+                throw new RuntimeException("not support \"" + s + "\", at line: " + line);
+            }
+            return words.get(s);
         }
 
         if (peek == '/') {
