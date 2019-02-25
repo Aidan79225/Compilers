@@ -17,7 +17,7 @@ public class Lexer {
         reserve(new Word(Tag.FALSE, "false"));
     }
 
-    private void readPeek() throws IOException{
+    private void readPeek() throws IOException {
         peek = (char)System.in.read();
     }
 
@@ -29,21 +29,12 @@ public class Lexer {
         }
 
         if (Character.isDigit(peek)) {
-            int v = 0;
-            do {
-                v = v * 10 + Character.digit(peek, 10);
-                readPeek();
-            } while (Character.isDigit(peek));
+            int v = getOneNum();
             return new Num(v);
         }
 
         if (Character.isLetter(peek)) {
-            StringBuffer sb = new StringBuffer();
-            do {
-                sb.append(peek);
-                readPeek();
-            } while (Character.isLetterOrDigit(peek));
-            String s = sb.toString();
+            String s = getOneWord();
             Word word = words.get(s);
             if (word == null) {
                 word = new Word(Tag.ID, s);
@@ -52,8 +43,62 @@ public class Lexer {
             return word;
         }
 
+        if (peek == '/') {
+            readPeek();
+            switch (peek) {
+                case '/':
+                    for (; ; readPeek()) {
+                        if (peek == '\n') {
+                            line = line + 1;
+                            break;
+                        }
+                    }
+                    peek = ' ';
+                    return scan();
+                case '*':
+                    for (; ; readPeek()) {
+                        if (peek == '\n') line = line + 1;
+                        else if (peek == '*') {
+                            readPeek();
+                            if (peek == '/') {
+                                peek = ' ';
+                                return scan();
+                            }
+                        }
+                    }
+            }
+        }
+
         Token token = new Token(peek);
         peek = ' ';
         return token;
     }
+
+    private int getOneNum() throws IOException {
+        int v = 0;
+        do {
+            v = v * 10 + Character.digit(peek, 10);
+            readPeek();
+        } while (Character.isDigit(peek));
+        return v;
+    }
+
+    private String getOneWord() throws IOException {
+        StringBuilder sb = new StringBuilder();
+        do {
+            sb.append(peek);
+            readPeek();
+        } while (Character.isLetterOrDigit(peek));
+        return sb.toString();
+    }
+
+    private String getOneWordWithoutNum() throws IOException {
+        StringBuilder sb = new StringBuilder();
+        do {
+            sb.append(peek);
+            readPeek();
+        } while (Character.isLetter(peek) || peek == '/' || peek == '*');
+        return sb.toString();
+    }
+
 }
