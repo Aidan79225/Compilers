@@ -92,13 +92,4 @@ public class Lexer {
         return sb.toString();
     }
 
-    private String getOneWordWithoutNum() throws IOException {
-        StringBuilder sb = new StringBuilder();
-        do {
-            sb.append(peek);
-            readPeek();
-        } while (Character.isLetter(peek) || peek == '/' || peek == '*');
-        return sb.toString();
-    }
-
 }
