@@ -34,9 +34,9 @@ public class Lexer {
             else break;
         }
 
-        if (Character.isDigit(peek)) {
-            int v = getOneNum();
-            return new Num(v);
+        if (Character.isDigit(peek) || peek == '.') {
+            String v = getOneNum();
+            return new Num(Float.valueOf(v));
         }
 
         if (Character.isLetter(peek)) {
@@ -93,13 +93,13 @@ public class Lexer {
         return token;
     }
 
-    private int getOneNum() throws IOException {
-        int v = 0;
+    private String getOneNum() throws IOException {
+        StringBuilder sb = new StringBuilder();
         do {
-            v = v * 10 + Character.digit(peek, 10);
+            sb.append(peek);
             readPeek();
-        } while (Character.isDigit(peek));
-        return v;
+        } while (Character.isLetterOrDigit(peek));
+        return sb.toString();
     }
 
     private String getOneWord() throws IOException {
