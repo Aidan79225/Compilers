@@ -35,8 +35,24 @@ public class Lexer {
         }
 
         if (Character.isDigit(peek) || peek == '.') {
-            String v = getOneNum();
-            return new Num(Float.valueOf(v));
+            boolean isFloat = peek == '.';
+            StringBuilder sb = new StringBuilder();
+            do {
+                if (peek == '.') {
+                    isFloat = true;
+                }
+                sb.append(peek);
+                readPeek();
+            } while (Character.isDigit(peek) || (!isFloat && peek == '.'));
+            String v = sb.toString();
+
+            if (isFloat) {
+                return new Float(java.lang.Float.valueOf(v));
+            } else {
+                return new Num(Integer.valueOf(v));
+            }
+
+
         }
 
         if (Character.isLetter(peek)) {
@@ -98,7 +114,7 @@ public class Lexer {
         do {
             sb.append(peek);
             readPeek();
-        } while (Character.isLetterOrDigit(peek));
+        } while (Character.isDigit(peek));
         return sb.toString();
     }
 
