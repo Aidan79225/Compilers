@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f99c3ea0-5a24-42ed-8d12-29c5608656d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lexer/Env.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lexer/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter2/Float.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Float.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter2/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter2/Num.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Num.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter2/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Tag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter2/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter2/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="f99c3ea0-5a24-42ed-8d12-29c5608656d7" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lexer/Env.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            <state relative-caret-position="1075">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#160#161#0" expanded="true" />
                 <element signature="e#183#184#0" expanded="true" />
@@ -148,7 +136,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551662318862" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551663202543" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -277,8 +265,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lexer/Env.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        <state relative-caret-position="1075">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#160#161#0" expanded="true" />
             <element signature="e#183#184#0" expanded="true" />
