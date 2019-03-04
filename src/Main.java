@@ -1,5 +1,5 @@
-import Chapter2.Lexer;
-import Chapter2.Token;
+import lexer.Lexer;
+import lexer.Token;
 
 public class Main {
 

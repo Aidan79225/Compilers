@@ -1,4 +1,4 @@
-package Chapter2;
+package lexer;
 
 public class Tag {
     public static final int

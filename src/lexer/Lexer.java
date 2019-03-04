@@ -1,4 +1,4 @@
-package Chapter2;
+package lexer;
 
 import java.io.IOException;
 import java.util.Hashtable;

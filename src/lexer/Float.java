@@ -1,4 +1,4 @@
-package Chapter2;
+package lexer;
 
 class Float extends Token {
     public final float value;

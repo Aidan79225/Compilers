@@ -1,4 +1,4 @@
-package Chapter2;
+package lexer;
 
 public class Word extends Token {
     public final String lexme;
