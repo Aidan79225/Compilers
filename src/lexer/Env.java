@@ -1,9 +1,9 @@
 package lexer;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 public class Env {
-    private Hashtable table = new Hashtable();
+    private HashMap<String, Symbol> table = new HashMap<>();
     private final Env prev;
     public Env(Env p) {
         prev = p;
@@ -15,7 +15,7 @@ public class Env {
 
     public Symbol get(String s) {
         for (Env e = this; e != null; e = e.prev) {
-            Symbol symbol = (Symbol) e.table.get(s);
+            Symbol symbol = e.table.get(s);
             if (symbol != null) {
                 return symbol;
             }
