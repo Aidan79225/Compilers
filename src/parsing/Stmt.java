@@ -1,4 +1,5 @@
 package parsing;
 
-public class Stmt {
+public abstract class Stmt {
+    public abstract void gen();
 }
