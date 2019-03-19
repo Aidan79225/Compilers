@@ -1,5 +1,7 @@
-import lexer.Lexer;
-import lexer.Token;
+package com.aidan.compiler;
+
+import com.aidan.compiler.lexer.Lexer;
+import com.aidan.compiler.lexer.Token;
 
 public class Main {
 

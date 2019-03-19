@@ -1,4 +1,4 @@
-package lexer;
+package com.aidan.compiler.lexer;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package lexer;
+package com.aidan.compiler.lexer;
 
 import java.io.IOException;
 import java.util.Hashtable;

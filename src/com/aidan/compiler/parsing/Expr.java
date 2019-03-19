@@ -1,4 +1,4 @@
-package parsing;
+package com.aidan.compiler.parsing;
 
 public class Expr {
 

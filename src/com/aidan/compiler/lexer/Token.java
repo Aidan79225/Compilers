@@ -1,4 +1,4 @@
-package lexer;
+package com.aidan.compiler.lexer;
 
 public class Token {
     public final int tag;
